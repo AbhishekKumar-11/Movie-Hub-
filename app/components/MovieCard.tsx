@@ -1,12 +1,18 @@
+import { useRouter } from 'next/navigation'
 import React from 'react'
  interface Card{
     title:string
+    id:any
     rating:number
     posterUrl:string
 }
-const MovieCard : React.FC<Card> = ({title,rating,posterUrl}) => {
+const MovieCard : React.FC<Card> = ({title,id,rating,posterUrl}) => {
+  const router = useRouter();
+  const redirectMovie = ()=>{
+   router.push(`singleDetail/${id}`)
+  }
   return (
-    <div className='w-[200px] bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg cursor-pointer h-[430px]'>
+    <div onClick={redirectMovie} className='w-[200px] bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg cursor-pointer h-[430px]'>
         <img src={posterUrl} alt={`${title} poster`} className='w-full object-cover' />
         <div className='p-4'>
             <h3 className="text-lgfont-bold-mb-2 ">

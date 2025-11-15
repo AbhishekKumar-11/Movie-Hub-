@@ -63,7 +63,8 @@ export default function Home() {
         ? "No movies found"
         : allmovies.map((movie:any, index:number) => (
             <MovieCard
-              key={movie.imdbID}
+              key={index}
+              id={movie.imdbID}
               title={movie.Title}
               rating={movie.Year}
               posterUrl={movie.Poster}
