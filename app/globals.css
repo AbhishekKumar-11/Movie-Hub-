@@ -1,10 +1,8 @@
 @import "tailwindcss";
 
 
-.hii{
-    background-color: aquamarine;
+body{
+   @apply bg-gray-900 text-gray-200 font-sans;
 }
-
-
 
 
