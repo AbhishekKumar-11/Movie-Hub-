@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import SkeletonLoading from "./components/SkeletonLoading";
 import { useSearchParams } from "next/navigation";
 
-const apikey = process.env.NEXT_PUBLIC_OMDB_API_KEY;
+const apikey =`cb9db9aa`;
 
 export default function HomeClient() {
   const [page, setPage] = useState(1);
