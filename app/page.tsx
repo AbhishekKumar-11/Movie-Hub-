@@ -8,7 +8,7 @@ import { useSearchParams } from "next/navigation";
 
 const apikey = process.env.NEXT_PUBLIC_OMDB_API_KEY;
 
-export default function Home() {
+export default function HomeClient() {
   const [page, setPage] = useState(1);
   const [totalPages] = useState(10);
   const [allMovies, setAllMovies] = useState<any>([]);
@@ -22,11 +22,9 @@ export default function Home() {
       setLoading(true);
 
       const query = search || "popular";
-
       const apiUrl = `https://omdbapi.com/?apikey=${apikey}&s=${query}&type=movie&page=${page}`;
 
       const response = await axios.get(apiUrl);
-
       setAllMovies(response.data.Search || []);
     } catch (error: any) {
       console.log(error.message);
@@ -70,7 +68,6 @@ export default function Home() {
         </button>
       </div>
 
-      
       {loading ? (
         <SkeletonLoading />
       ) : (
